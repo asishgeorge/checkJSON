@@ -169,9 +169,9 @@
        
             <div class="row" style="margin-top: 10px;">
                 <div class="col-md-1" style="padding: 0px;">
-                    <div style="border-radius: 5px;  width: 30px; height: 80px; " class="float-right">
-                        <button></button>
-                    
+                    <div style="width: 30px; height: 80px; " class="float-right">
+                        <button style="width:30px; height: 30px; margin: 2px; padding: 2px;" class="btn btn-secondary" id="input_clear" onclick="inputClear()">x</button>
+                        <!--<button style="width:30px; height: 30px; margin: 2px; padding: 2px;" class="btn btn-secondary" ></button>-->
                     </div>
                 </div>
                 <div class="col-md-4"  style="padding-left: 0px;">
@@ -186,7 +186,8 @@
                     <div>
                         <button class="btn btn-primary"  style="vertical-align: middle; margin-bottom: 10px;" onclick="beautifyJSON()" >Beautifier</button><br>
                         <button class="btn btn-primary"  style="vertical-align: middle;" onclick="checkJSON()" >Single Line</button><br>
-                        <button class="btn btn-primary"  style="vertical-align: middle; margin-top: 10px;" onclick="clearTA()" >Clear</button>
+                        <!--
+                        <button class="btn btn-primary"  style="vertical-align: middle; margin-top: 10px;" onclick="clearTA()" >Clear</button>-->
                     </div>
 
                     <div style="padding: 80px;">
@@ -194,13 +195,18 @@
                     </div>
                 </div>
                
-                <div class="col-md-4" >
+                <div class="col-md-4" style="padding-left:0px;" >
                     <div id="editor"></div>
                            
                     <!--
                     <textarea id="outputTA" placeholder="Singleline Output JSON" rows="20" ></textarea>-->
                 </div>
-                <div class="col-md-1"  style="padding: 0px;"></div>
+                <div class="col-md-1"  style="padding: 0px;" >
+                    <div style="width: 30px; height: 80px; padding: 0px;" class="float-left">
+                        <button style="width:30px; height: 30px; margin-top: 2px; margin-bottom: 2px; padding: 2px;" class="btn btn-secondary" id="output_clear" onclick="outputClear()">x</button>
+                       <!-- <button style="width:30px; height: 30px; margin-top: 2px; margin-bottom: 2px; padding: 2px;" class="btn btn-secondary" ></button>-->
+                    </div>
+                </div>
 
             </div>
             
@@ -236,7 +242,7 @@
                         
                         </div>
                         <div class="col-md-6" >
-                           <img src="https://checkjson.web.app/checkJSON.jpeg" style="width: 100%; padding: 120px;" alt="Check JSON">
+                           <img src="http://drive.google.com/uc?export=view&id=1YmYryi2VJueUYxdZ-uq525V_tefwV0xN" class="rounded-circle" style="width: 100%; padding: 120px; " alt="Check JSON">
                         </div>
                     </div>
                    
@@ -282,6 +288,43 @@
                             
                 }
             }
+
+            function inputClear(){
+                document.getElementById('inputTA').value = '';
+                document.getElementById('inputTA').style.borderColor =null;
+
+                if (document.querySelector(".hwt-backdrop")){
+                            
+                            document.querySelector(".hwt-backdrop").innerHTML="";
+                            document.querySelector(".hwt-container").style="";
+                            document.querySelector(".hwt-backdrop").style="";
+                               
+                        }else{
+                            console.log("e");
+                                    
+                        }
+            }
+
+
+            function outputClear(){
+                editor.setValue("");
+                document.getElementById('inputTA').style.borderColor =null;
+
+                if (document.querySelector(".hwt-backdrop")){
+                            
+                            document.querySelector(".hwt-backdrop").innerHTML="";
+                            document.querySelector(".hwt-container").style="";
+                            document.querySelector(".hwt-backdrop").style="";
+                               
+                }else{
+                            console.log("e");
+                                    
+                }
+               
+            }
+
+
+
 
             function checkJSON(){
                 var inputText = document.getElementById('inputTA').value;          

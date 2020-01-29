@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check JSON | Best JSON Validator, Single line and Multiline JSON Converter</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- highlight-within-textarea CSS/JS 
+		<link href="jquery.highlight-within-textarea.css" rel="stylesheet">-->
+		<script src="jquery.highlight-within-textarea.js"></script>
+       
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.7/mode-json.js"></script>
+        <script src="https://use.fontawesome.com/4c630f6e5e.js" crossorigin="anonymous"></script>
+       <style>
+        .highlight{
+            background-color: red;
+
+        }
+
+        #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        height: 90%;
+
+    }
+
+        .hwt-content {
+            border: 1px solid;
+            background: none transparent !important;
+        }
+        .hwt-content mark.red {
+				background-color: #d42f2f;
+			}
+            
+            #outputTA {
+                width: 100%;
+                height: 90%;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                background-color: #f8f8f8;
+                resize: none;
+            }
+
+            .hwt-container {
+	            display: inline-block;
+	            position: relative;
+	            overflow: hidden !important;
+                -webkit-text-size-adjust: none !important;
+                width: 100%;
+             
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                background-color: #f8f8f8;
+                resize: none;
+}
+
+.hwt-backdrop {
+	position: absolute !important;
+	top: 0 !important;
+	right: -99px !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	padding-right: 99px !important;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+}
+
+.hwt-highlights {
+	width: auto !important;
+	height: auto !important;
+	border-color: transparent !important;
+	white-space: pre-wrap !important;
+	word-wrap: break-word !important;
+	color: transparent !important;
+	overflow: hidden !important;
+}
+
+.hwt-input {
+	display: block !important;
+	position: relative !important;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	font: inherit;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+}
+
+.hwt-content {
+	border: 1px solid;
+	background: none transparent !important;
+}
+
+.hwt-content mark {
+	padding: 0 !important;
+	color: inherit;
+}
+
+        </style>
+
+        <script data-ad-client="ca-pub-3479427326059972" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+        <meta http-equiv="content-language" content="en-US"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1"> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <meta charset="utf-8"> 
+        <meta name="description" content="Best Onlline JSON Validator, Multiline and Singleline JSON Converter tool - It can format JSON and validate it"> 
+        <meta name="author" content="Asish"> 
+        <meta name="keywords" content="check json, json viewer,json beautifier, multiline to single line json, single line json, json pretty print,online json viewer,pretty json,format json, json reader,json pretty, pretty print json,beautify json,json file viewer,prettify json, json converter,json viewer online, json validator, multiline json converter, singleline json converter,json convertor"> 
+        <meta property="og:image" content="https://checkjson.web.app/checkJSON.jpeg"> 
+        <meta property="og:url" content="https://checkjson.web.app"> 
+        <meta name="twitter:card" content="summary"> 
+        <meta name="twitter:title" content=" Best JSON Validator, Single line and Multiline JSON Converter"> 
+        <meta name="twitter:description" content="Best Onlline JSON Validator, Multiline and Singleline JSON Converter tool - It can format JSON and validate it"> 
+        <meta name="twitter:image" content="https://checkjson.web.app/checkJSON.jpeg"> 
+        <meta name="twitter:url" content="https://checkjson.web.app"> 
+        <meta name="twitter:creator" content="@asishgeorg"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=10">
+        <meta name="google-site-verification" content="Fn0GkAF6YaEkNTgE5WOqaBf4v4HHQHFhig7_cP4D384" />
+        <link rel="icon" type="image/jpeg" href="/checkJSON.jpeg">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" style="color: white;" href="#">Check JSON</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+          </nav>
+
+       
+        <div class="container-fluid">
+
+            <div class="container" style="margin: 5px auto;">
+                <div class="row">
+                    <div class="col-md-12" style="margin:0 auto; min-width:250px;min-height:50px;">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- createJSON-Banner -->
+                            <ins class="adsbygoogle"
+                                style="display:block;width:728px;height:90px;margin:0 auto;"
+                                data-ad-client="ca-pub-3479427326059972"
+                                data-ad-slot="6495529858"
+                                ></ins>
+                            <script>
+
+                                window.onload = function() {
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                }   
+                            </script>
+                    </div>
+                </div>
+                
+            </div>
+
+       
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-1" style="padding: 0px;">
+                    <div style="border-radius: 5px;  width: 30px; height: 80px; " class="float-right">
+                        <button></button>
+                    
+                    </div>
+                </div>
+                <div class="col-md-4"  style="padding-left: 0px;">
+                    <textarea class="TA" style="width: 100%; height: 90%; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; "rows="20" id="inputTA" placeholder="Enter JSON here.." ></textarea>
+                </div>
+              
+                <div class="col-md-2  text-center"  >
+                    <div style="padding: 80px;">
+
+                    </div>
+                    
+                    <div>
+                        <button class="btn btn-primary"  style="vertical-align: middle; margin-bottom: 10px;" onclick="beautifyJSON()" >Beautifier</button><br>
+                        <button class="btn btn-primary"  style="vertical-align: middle;" onclick="checkJSON()" >Single Line</button><br>
+                        <button class="btn btn-primary"  style="vertical-align: middle; margin-top: 10px;" onclick="clearTA()" >Clear</button>
+                    </div>
+
+                    <div style="padding: 80px;">
+
+                    </div>
+                </div>
+               
+                <div class="col-md-4" >
+                    <div id="editor"></div>
+                           
+                    <!--
+                    <textarea id="outputTA" placeholder="Singleline Output JSON" rows="20" ></textarea>-->
+                </div>
+                <div class="col-md-1"  style="padding: 0px;"></div>
+
+            </div>
+            
+        </div>
+       
+       
+            <div class="container-fluid" style="margin-top: 10px; background-color: #FFEFF8; padding: 25px;">
+
+                <div class="container" style="margin: 5px auto;">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center;">
+                            <h2 style="font-weight: bold;">What is Check JSON?</h2>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-md-6">
+                            <p> Welcome to CheckJSON. Best Online JSON Validator and Multiline to Single line converter. JSON is a data format that is gaining popularity and used extensively in many AJAX powered Web sites.</p>
+                            <p> JavaScript Object Notation (JSON) is an open-standard file format or data interchange format that uses human-readable text to transmit data objects consisting of attribute–value pairs and array data types (or any other serializable value). It is a very common data format, with a diverse range of applications, such as serving as replacement for XML in AJAX systems.</p>
+                            <p>Many websites use JSON to send and recieve data. This site helps you to fomat JSON to suit your needs. This will help you preview the data before sharing or coding.</p>
+                            <br>
+                            <h4 style="font-weight: bold;"> Pros of the Tool </h4>
+                            <ul>
+                                <li>Format your JSON</li>
+                                <li>Validate your JSON</li>
+                                <li>Shows errors in JSON</li>
+                                <li>Make JSON in Single Line</li>
+                                <li>We don't store your JSON. Operation takes place in browser itself.</li>
+                            </ul>
+                            <p  style="font-weight: bold;">Some more info about JSON</p>
+                            <a href="https://json.org/">JSON.org</a><br>
+                            <a href="https://jsonapi.org/format/">JSON API</a><br>
+                            <a href="https://www.youtube.com/watch?v=JuFdz8f-cT4">What is JSON | Youtube | Telusko Learnings</a><br>
+                        
+                        </div>
+                        <div class="col-md-6" >
+                           <img src="https://checkjson.web.app/checkJSON.jpeg" style="width: 100%; padding: 120px;" alt="Check JSON">
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+               
+            </div>
+            <div class="container-fluid" style="padding: 5px; background-color: #050505; text-align: center;">
+                <span style="font-size: 12px; color: #777575;">CheckJSON by AG</span>
+            </div>
+
+        <script src="/ace.js" type="text/javascript" charset="utf-8"></script>
+
+        <script>
+
+            var editor = ace.edit("editor");
+            ace.edit(editor, {
+                mode: "ace/mode/json",
+                selectionStyle: "text"
+            });
+            // use setOptions method to set several options at once
+            editor.setOptions({                
+                copyWithEmptySelection: true,
+                wrap: true               
+            });
+
+            var outputText = document.getElementById('outputTA');
+                
+            function clearTA(){
+                document.getElementById('inputTA').value = '';
+                document.getElementById('editor').value = '';
+                document.getElementById('inputTA').style.borderColor =null;
+                editor.setValue("");
+
+                if (document.querySelector(".hwt-backdrop")){
+                            
+                    document.querySelector(".hwt-backdrop").innerHTML="";
+                    document.querySelector(".hwt-container").style="";
+                    document.querySelector(".hwt-backdrop").style="";
+                       
+                }else{
+                    console.log("e");
+                            
+                }
+            }
+
+            function checkJSON(){
+                var inputText = document.getElementById('inputTA').value;          
+                var a;
+                if(inputText != ""||inputText != null){
+                  if(inputText){
+                      try{
+                        a = JSON.parse(inputText);
+                        var output = JSON.stringify(a);
+                        document.getElementById('editor').value = '';
+                        editor.setValue(output);
+                        document.getElementById('inputTA').style ="width: 100%; height: 90%; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; background-color: #f8f8f8; "; 
+                       
+                        if (document.querySelector(".hwt-backdrop")){
+
+                            document.querySelector(".hwt-backdrop").innerHTML="";
+                            document.querySelector(".hwt-container").style="";
+                            document.querySelector(".hwt-backdrop").style="";
+                       
+                        }else{
+                            console.log("e");
+                            
+                        }
+                        
+                       
+
+                      }catch(e){
+                        editor.setValue(e.message); 
+                        //var text1 = e instanceof SyntaxError; 
+                                       
+
+                       // var matches = outputText.value.match(/\d+/); 
+                       
+                        var matches = e.message.match(/\d+/); 
+                        var startNum = parseInt(matches[0]);
+                        
+                        if (matches){
+
+                            //inputText = inputText.substring(0, matches[0])+ "<span style=\"background-color\":\"red\">"+inputText.substring( matches[0],matches[0]+2)+"</span>"+ inputText.substring(matches[0]+3);
+                            //document.getElementById('inputTA').value= inputText;
+                            document.getElementById('inputTA').style.borderColor = "red";
+                            $('.TA').highlightWithinTextarea({
+                                    highlight: [{
+                                        highlight: [startNum, startNum+4],
+                                        className: 'red'
+                                    }]
+                                    
+                                   
+                            });
+                        }else {
+                            console.log("e");
+                        }                       
+                      }
+                  }else {
+                            console.log("e");
+                        }
+                    
+                }else {
+                            console.log("e");
+                        }
+            }        
+
+            function beautifyJSON(){
+                var inputText = document.getElementById('inputTA').value;                     
+                var a1;
+                if(inputText != ""||inputText != null){
+                  if(inputText){
+                      try{
+                        a1 = JSON.parse(inputText);
+                        var output = JSON.stringify(a1, null, "\t");
+                        document.getElementById('editor').value = '';                        
+                        editor.setValue(output);
+                        //document.getElementById('editor').value = a1;
+                        document.getElementById('inputTA').style ="width: 100%; height: 90%; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; background-color: #f8f8f8; "; 
+                                          
+                        if (document.querySelector(".hwt-backdrop")){
+                            
+                            document.querySelector(".hwt-backdrop").innerHTML="";
+                            document.querySelector(".hwt-container").style="";
+                            document.querySelector(".hwt-backdrop").style="";
+                       
+                        }else{
+                            console.log("e");
+                            
+                        }
+                    }catch(e){
+                        editor.setValue(e.message); 
+                        
+                        console.log(e);                    
+                       
+                        var matches = e.message.match(/\d+/); 
+                        var startNum = parseInt(matches[0]);
+                        
+                        if (matches){
+
+                            document.getElementById('inputTA').style.borderColor = "red";
+                            $('.TA').highlightWithinTextarea({
+                                    highlight: [{
+                                        highlight: [startNum, startNum+4],
+                                        className: 'red'
+                                    }]
+                                    
+                                   
+                            });
+                        }else {
+                            console.log("e");
+                        }                       
+                      }
+                  }else {
+                        console.log("e");
+                        }
+                    
+                }else {
+                    console.log("e");
+                        }
+            }
+        </script>
+    
+
+
+</body>
+</html>
